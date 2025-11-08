@@ -1,0 +1,207 @@
+/* ============================================================================
+   CLASSTRACK - COURSE STYLES (courses.css)
+   Styles specifically for course cards and course-related elements
+   IMPROVED CONTRAST VERSION
+   ============================================================================ */
+
+/* ===== COURSE LIST CONTAINER ===== */
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ===== INDIVIDUAL COURSE CARD ===== */
+.course-card {
+    background-color: #FFFFFF;
+    border-left: 4px solid #0062B8;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.course-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+/* ===== COURSE HEADER ===== */
+.course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.course-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #002E5D; /* Navy - High contrast */
+    margin-bottom: 0.25rem;
+}
+
+.course-code {
+    font-size: 0.85rem;
+    color: #002E5D; /* Changed from gold to navy for better contrast */
+    font-weight: 600;
+    background-color: #FFE699; /* Lighter gold background for better contrast */
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* ===== COURSE INFO ROW ===== */
+.course-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #333333; /* Darker for better contrast */
+    margin-bottom: 0.75rem;
+}
+
+.course-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ===== PROGRESS SECTION ===== */
+.course-progress {
+    margin-bottom: 0.75rem;
+}
+
+.course-progress-label {
+    font-size: 0.8rem;
+    color: #333333; /* Darker for better contrast */
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #E0E0E0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #28A745;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.course-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #E0E0E0;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #333333; /* Darker for better contrast */
+}
+
+.btn-icon:hover {
+    background-color: #F5F5F5;
+}
+
+.btn-edit:hover {
+    color: #0062B8;
+    background-color: rgba(0, 98, 184, 0.1);
+}
+
+.btn-delete:hover {
+    color: #DC3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* ===== ACTIVE COURSE ===== */
+.course-card.active {
+    border-left-width: 6px;
+    background-color: #F8F9FA;
+    box-shadow: 0 4px 12px rgba(0, 98, 184, 0.15);
+}
+
+/* ===== EMPTY STATE ===== */
+.courses-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #666666; /* Darker for better contrast */
+}
+
+.courses-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.courses-empty-text {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #333333; /* Darker for better contrast */
+}
+
+/* ===== COURSE COLOR THEMES ===== */
+.course-card[data-color="#002E5D"] {
+    border-left-color: #002E5D;
+}
+
+.course-card[data-color="#0062B8"] {
+    border-left-color: #0062B8;
+}
+
+.course-card[data-color="#28A745"] {
+    border-left-color: #28A745;
+}
+
+.course-card[data-color="#DC3545"] {
+    border-left-color: #DC3545;
+}
+
+.course-card[data-color="#FFB81C"] {
+    border-left-color: #FFB81C;
+}
+
+.course-card[data-color="#17A2B8"] {
+    border-left-color: #17A2B8;
+}
+
+.course-card[data-color="#6F42C1"] {
+    border-left-color: #6F42C1;
+}
+
+.course-card[data-color="#FD7E14"] {
+    border-left-color: #FD7E14;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .course-card {
+        padding: 0.875rem;
+    }
+    
+    .course-name {
+        font-size: 1rem;
+    }
+}

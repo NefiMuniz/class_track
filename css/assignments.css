@@ -1,0 +1,365 @@
+/* ===== ASSIGNMENT LIST CONTAINER ===== */
+.assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* ===== INDIVIDUAL ASSIGNMENT CARD ===== */
+.assignment-card {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.assignment-card:hover {
+    border-color: #0062B8;
+    box-shadow: 0 4px 12px rgba(0, 98, 184, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ===== COMPLETED ASSIGNMENT STYLING ===== */
+.assignment-card.completed {
+    background-color: #F8FFF9;
+    border-color: #28A745;
+    opacity: 0.85;
+}
+
+.assignment-card.completed .assignment-title {
+    text-decoration: line-through;
+    color: #666666;
+}
+
+/* ===== OVERDUE ASSIGNMENT STYLING ===== */
+.assignment-card.overdue {
+    background-color: #FFF5F5;
+    border-color: #DC3545;
+    border-width: 2px;
+}
+
+/* ===== ASSIGNMENT HEADER ===== */
+.assignment-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.assignment-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+/* ===== CUSTOM CHECKBOX ===== */
+.checkbox-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #0062B8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #28A745;
+    border-color: #28A745;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓';
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ===== ASSIGNMENT CONTENT ===== */
+.assignment-content {
+    flex: 1;
+}
+
+.assignment-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a; /* Very dark gray - high contrast */
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Ensure title is readable even when overdue */
+.assignment-card.overdue .assignment-title {
+    color: #1a1a1a; /* Keep dark and readable */
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.assignment-description {
+    font-size: 0.9rem;
+    color: #333333; /* Darker for better contrast */
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+/* ===== ASSIGNMENT METADATA ===== */
+.assignment-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.meta-icon {
+    font-size: 1rem;
+}
+
+/* FIXED: Due date - always readable */
+.due-date {
+    color: #333333; /* Dark gray - readable */
+    font-weight: 600;
+}
+
+.due-soon {
+    color: #C55000; /* Darker orange for better contrast */
+    font-weight: 700;
+}
+
+/* Points - high contrast */
+.points {
+    color: #1a1a1a; /* Very dark - readable on all backgrounds */
+    font-weight: 700;
+}
+
+/* ===== PRIORITY BADGES ===== */
+.priority-badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.priority-high {
+    background-color: #DC3545;
+    color: #FFFFFF;
+}
+
+.priority-medium {
+    background-color: #FD7E14;
+    color: #FFFFFF;
+}
+
+.priority-low {
+    background-color: #17A2B8;
+    color: #FFFFFF;
+}
+
+/* ===== ASSIGNMENT ACTIONS ===== */
+.assignment-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-edit-assignment {
+    background-color: #0062B8;
+    color: #FFFFFF;
+}
+
+.btn-edit-assignment:hover {
+    background-color: #004A8F;
+}
+
+.btn-delete-assignment {
+    background-color: #DC3545;
+    color: #FFFFFF;
+}
+
+.btn-delete-assignment:hover {
+    background-color: #C82333;
+}
+
+/* ===== STATISTICS SIDEBAR ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #FFFFFF; /* White background */
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #E0E0E0;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: #FFB81C;
+    transform: translateY(-2px);
+}
+
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a; /* Very dark - high contrast */
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+    font-size: 0.85rem;
+    color: #333333; /* Dark gray - readable */
+    font-weight: 600;
+}
+
+/* ===== CHART CONTAINER ===== */
+.chart-container {
+    background-color: #FFFFFF; /* White background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #E0E0E0;
+}
+
+.chart-container h3 {
+    font-size: 1.1rem;
+    color: #1a1a1a; /* Very dark - high contrast */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.chart-container canvas {
+    max-height: 250px;
+}
+
+/* ===== POINTS SUMMARY ===== */
+.points-summary {
+    background-color: #FFFFFF; /* White background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #E0E0E0;
+}
+
+.points-summary h3 {
+    font-size: 1.1rem;
+    color: #1a1a1a; /* Very dark - high contrast */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.points-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 0.95rem;
+    color: #333333; /* Dark gray - readable */
+}
+
+.points-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.points-value {
+    font-weight: 700;
+    color: #1a1a1a; /* Very dark - readable */
+    font-size: 1.1rem;
+}
+
+/* ===== EMPTY STATE ===== */
+.assignments-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.assignments-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.assignments-empty-text {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .assignment-card {
+        padding: 1rem;
+    }
+    
+    .assignment-header {
+        flex-direction: column;
+    }
+    
+    .assignment-meta {
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .assignment-actions {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .btn-sm {
+        flex: 1;
+    }
+}

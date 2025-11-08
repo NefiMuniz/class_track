@@ -1,0 +1,540 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F5F5;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ===== HEADER STYLES ===== */
+.app-header {
+    background-color: #002E5D;
+    color: #FFFFFF;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.header-content {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.app-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: #FFB81C;
+    font-weight: 300;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+    background-color: #FFB81C;
+    color: #002E5D;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background-color: #E5A519;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: #0062B8;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #004A8F;
+    transform: translateY(-1px);
+}
+
+.btn-cancel {
+    background-color: #FFFFFF;
+    color: #666666;
+    border: 2px solid #CCCCCC;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #F5F5F5;
+    border-color: #999999;
+}
+
+/* ===== DASHBOARD LAYOUT - RESPONSIVE ===== */
+.dashboard {
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+/* Large screens (1200px+) - 3 columns */
+@media (min-width: 1200px) {
+    .dashboard {
+        grid-template-columns: 280px minmax(0, 1fr) 320px;
+        max-width: 1400px;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+
+/* Medium screens (768px - 1199px) - 2 columns, stats below */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .dashboard {
+        grid-template-columns: 260px minmax(0, 1fr);
+        grid-template-areas:
+            "sidebar main"
+            "stats stats";
+    }
+    
+    .courses-sidebar {
+        grid-area: sidebar;
+    }
+    
+    .assignments-panel {
+        grid-area: main;
+    }
+    
+    .stats-sidebar {
+        grid-area: stats;
+        max-width: 100%;
+    }
+}
+
+/* Small screens (below 768px) - Single column stack */
+@media (max-width: 767px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        padding: 0.75rem;
+        gap: 1rem;
+    }
+}
+
+/* ===== SIDEBAR STYLES ===== */
+.courses-sidebar,
+.stats-sidebar {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Sticky behavior only on large screens */
+@media (min-width: 1200px) {
+    .courses-sidebar,
+    .stats-sidebar {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #FFB81C;
+}
+
+.sidebar-header h2 {
+    font-size: 1.3rem;
+    color: #002E5D;
+    font-weight: 700;
+}
+
+.count-badge {
+    background-color: #FFB81C;
+    color: #002E5D;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* ===== CENTER PANEL (ASSIGNMENTS) ===== */
+.assignments-panel {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    overflow: hidden;
+}
+
+.assignments-panel h2 {
+    font-size: 1.6rem;
+    color: #002E5D;
+    margin-bottom: 1.25rem;
+}
+
+/* ===== FILTER CONTROLS - RESPONSIVE ===== */
+.filter-controls {
+    margin-bottom: 1.5rem;
+}
+
+.filters-row {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Large screens - 4 columns */
+@media (min-width: 992px) {
+    .filters-row {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
+
+/* Medium screens - 2 columns */
+@media (min-width: 576px) and (max-width: 991px) {
+    .filters-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Small screens - 1 column */
+@media (max-width: 575px) {
+    .filters-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0062B8;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #0062B8;
+}
+
+/* ===== EMPTY STATE MESSAGE ===== */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999999;
+    font-size: 1.1rem;
+}
+
+/* ===== MODAL (POPUP) STYLES ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 2px solid #F5F5F5;
+}
+
+.modal-header h2 {
+    color: #002E5D;
+    font-size: 1.5rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #DC3545;
+}
+
+/* ===== FORM STYLES ===== */
+form {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #002E5D;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="color"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0062B8;
+}
+
+.form-group small {
+    display: block;
+    color: #666666;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Form row - responsive */
+.form-row {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .form-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 576px) {
+    .form-actions {
+        flex-direction: row;
+    }
+    
+    .form-actions button {
+        flex: 1;
+    }
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media (max-width: 767px) {
+    .app-header {
+        padding: 1rem;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .assignments-panel {
+        padding: 1rem;
+    }
+    
+    .assignments-panel h2 {
+        font-size: 1.4rem;
+    }
+    
+    .sidebar-header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== PREVENT OVERFLOW ===== */
+.courses-list,
+.assignments-list {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure all child elements respect container width */
+* {
+    max-width: 100%;
+}
+
+/* Images and media */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== FOOTER STYLES ===== */
+.app-footer {
+    background-color: #002E5D;
+    color: #FFFFFF;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 4px solid #FFB81C;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+}
+
+.footer-text strong {
+    color: #FFB81C;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.footer-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFB81C;
+    transform: translateY(-2px);
+}
+
+.footer-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}

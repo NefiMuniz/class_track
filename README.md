@@ -2,13 +2,31 @@
 
 ## Overview
 
-**ClassTrack** is a lightweight, responsive web application designed to help students manage their academic workload efficiently. Built with vanilla JavaScript, HTML5, and CSS3, ClassTrack provides a modern interface for organizing courses, tracking assignments, and monitoring academic progress—all stored locally in your browser using localStorage.
+### Professional Learning Goal
 
-Whether you're juggling multiple courses, tracking assignment deadlines, or monitoring your completion progress, ClassTrack helps you stay organized and focused on what matters: your education.
+As a software engineer and developer, I created ClassTrack to deepen my understanding of modern JavaScript, object-oriented programming principles, and responsive web design. This project challenged me to build a complete, production-ready application from the ground up using vanilla JavaScript, demonstrating proficiency in ES6+ syntax, asynchronous programming patterns, and client-side data management. Through ClassTrack, I wanted to showcase my ability to write clean, well-organized, and maintainable code while creating a genuinely useful tool that solves real-world problems.
+
+### Software Description
+
+ClassTrack is a responsive, single-page web application built entirely in vanilla JavaScript that helps users manage their academic workload efficiently. The application allows students to create courses, add detailed assignments with due dates and priority levels, track completion progress, and visualize their academic statistics in real-time. All data is persisted locally in the browser using the LocalStorage API, eliminating the need for a backend server while ensuring data privacy and immediate availability.
+
+The software demonstrates advanced JavaScript concepts including ES6 array methods for data manipulation, exception handling for robust error management, recursion for elegant problem-solving, DOM manipulation for dynamic UI creation, and integration of external libraries for enhanced functionality. The responsive design adapts seamlessly to desktop, tablet, and mobile devices without horizontal scrolling, ensuring an optimal user experience across all platforms.
+
+### Purpose for Writing This Software
+
+I developed ClassTrack with three primary objectives:
+
+**1. Mastery of Modern JavaScript:** To deepen my expertise in ES6+ features including arrow functions, template literals, destructuring, spread operators, and modern array methods. I wanted to demonstrate proficiency in using `filter()`, `map()`, `reduce()`, `find()`, `sort()`, and `some()` to solve real problems elegantly.
+
+**2. Production-Ready Code Quality:** To prove that I can write professional-grade code that is modular, maintainable, and well-documented. Each JavaScript file has a single responsibility, comprehensive comments explain the code's purpose, and error handling prevents the application from crashing under adverse conditions.
+
+**3. Full-Stack Thinking:** To demonstrate that I understand the complete web development lifecycle—from user interface design and interaction handling, through data management and validation, to storage and retrieval. Building without a backend forced me to think critically about client-side architecture and data management best practices.
+
+This application serves as both a portfolio piece and a valuable tool I personally use for managing my own academic responsibilities at BYU-Pathway Worldwide.
 
 ---
 
-## 🎥 Demo & Video
+## Software Demo Video
 
 Test the application:
 [**Access the Class Track**](https://nefimuniz.github.io/class_track/)
@@ -21,77 +39,86 @@ Watch a complete walkthrough of ClassTrack features:
 
 ---
 
-## 🎯 Key Features
+## Development Environment
 
-### Course Management
-- **Create and organize courses** with custom names, codes, and color themes
-- **Track course details** including semester, credits, and academic progress
-- **Visual progress indicators** showing completion percentage for each course
-- **Edit and delete courses** with intuitive controls
+### Tools & Technologies Used
 
-### Assignment Tracking
-- **Add detailed assignments** with descriptions, due dates, and point values
-- **Set priority levels** (High, Medium, Low) for better organization
-- **Mark assignments complete** with an interactive checkbox system
-- **Search and filter** assignments by course, status, or text content
-- **Sort assignments** by due date, priority, or points value
+**Code Editor:**
+- **Visual Studio Code (VS Code)** - Primary IDE with extensions for JavaScript, HTML/CSS, and Git integration
 
-### Progress Visualization
-- **Real-time statistics** showing total, completed, and overdue assignments
-- **Completion chart** with an interactive doughnut graph powered by Chart.js
-- **Points tracking** to monitor earned vs. total points
-- **Visual feedback** for overdue assignments and upcoming deadlines
+**Version Control:**
+- **Git & GitHub** - For version control, repository management, and collaboration capabilities
 
-### Responsive Design
-- **Mobile-friendly interface** that adapts to any screen size
-- **Left-aligned layout** optimized for readability
-- **No horizontal scrolling** on any device
-- **Touch-friendly buttons** and interactive elements
+**Development Server:**
+- **Live Server (VS Code Extension)** - For real-time browser refresh during development
 
-### Data Persistence
-- **LocalStorage integration** - data persists across browser sessions
-- **Automatic saving** of all changes
-- **No backend required** - complete privacy and offline functionality
-- **Easy data management** with clear storage structure
+**Browser DevTools:**
+- **Chrome DevTools** - For debugging JavaScript, inspecting DOM elements, viewing LocalStorage, and monitoring network activity
+- **Firefox Developer Tools** - For cross-browser testing and validation
 
----
+**Additional Tools:**
+- **Google Chrome** - Primary testing browser
+- **Mozilla Firefox** - Secondary testing for cross-browser compatibility
+- **Responsive Design Mode** - Browser built-in tool for mobile/tablet testing
+- **JSONFormatter** - For validating and formatting JSON data in LocalStorage
 
-## 🎨 Design Features
+### Programming Languages & Libraries
 
-### Color Palette (BYU-Pathway Inspired)
-- **Navy Blue (#002E5D)** - Primary brand color
-- **Bright Blue (#0062B8)** - Interactive elements
-- **Gold (#FFB81C)** - Accent highlights
-- **Green (#28A745)** - Completed items
-- **Red (#DC3545)** - Overdue/High priority
-- **Orange (#FD7E14)** - Medium priority
-
-### Accessibility
-- **High contrast text** for readability
-- **Semantic HTML** structure
-- **Keyboard navigation** support
-- **WCAG-compliant colors**
-
----
-
-## 💻 Technology Stack
-
-### Frontend
-- **HTML5** - Semantic markup and form structure
-- **CSS3** - Responsive layout with CSS Grid and Flexbox
-- **JavaScript (ES6+)** - Modern JavaScript features:
-  - ES6 Array Methods: `filter()`, `map()`, `reduce()`, `find()`, `sort()`
+**Core Language:**
+- **JavaScript (ES6+/ECMAScript 2015+)** - Modern JavaScript with features including:
   - Arrow functions and template literals
+  - ES6 array methods (filter, map, reduce, find, sort)
   - Destructuring and spread operator
-  - Promise handling
+  - Promise handling and async patterns
+  - Classes and object-oriented principles
 
-### External Libraries
-- **Chart.js** - Beautiful, interactive charts via CDN
-- **date-fns** - Date formatting and calculations via CDN
+**Markup & Styling:**
+- **HTML5** - Semantic HTML structure with form validation
+- **CSS3** - Advanced CSS features including:
+  - CSS Grid for dashboard layout
+  - Flexbox for responsive components
+  - CSS Variables for theming
+  - Media queries for responsive design
+  - CSS animations and transitions
 
-### Storage
-- **Browser LocalStorage API** - Client-side data persistence
-- **JSON serialization** - Structured data storage
+**External Libraries (via CDN):**
+- **Chart.js (v3.9+)** - Interactive data visualization library for pie/doughnut charts and bar charts
+  - Enables real-time chart updates with smooth animations
+  - Provides responsive, touch-friendly chart interactions
+
+- **date-fns (v2.29.3+)** - Utility library for date formatting and calculations
+  - Simplifies date operations and locale-aware formatting
+  - Provides consistent date handling across the application
+
+**Browser APIs Used:**
+- **LocalStorage API** - Client-side data persistence with exception handling
+- **DOM API** - Dynamic element creation and manipulation
+- **Event API** - User interaction handling and event delegation
+- **JSON API** - Data serialization and deserialization
+
+---
+
+## Useful Websites
+
+These resources proved invaluable during ClassTrack development:
+
+- [MDN Web Docs - JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Comprehensive JavaScript documentation and tutorials
+- [MDN Web Docs - ES6 Features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) - In-depth guide to modern JavaScript syntax
+- [Chart.js Documentation](https://www.chartjs.org/) - Official Chart.js library documentation with examples
+- [date-fns Documentation](https://date-fns.org/) - Complete guide to date-fns library functions
+- [MDN Web Docs - LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - LocalStorage API reference and best practices
+- [JSON Formatter & Validator](https://jsonformatter.org/) - Testing and validating JSON data structures
+
+---
+
+## Future Work
+
+  - Integrate Firebase backend for multi-device sync
+  - Implement user authentication (email/password, Google OAuth)
+  - Enable data backup to cloud storage
+  - Workload distribution chart showing assignments per week
+  - Export to Google Calendar
+  - PDF report generation for progress summary
 
 ---
 
@@ -117,154 +144,6 @@ ClassTrack/
     ├── filters.js            # Filtering and sorting (ES6 arrays)
     └── charts.js             # Chart.js integration
 ```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Text editor (VS Code, Sublime Text, etc.)
-- Optional: Live Server extension for local development
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/NéfiMuniz/class_track.git
-   cd class_track
-   ```
-
-2. **Open in your browser**
-   - **Simple Method**: Double-click `index.html`
-   - **Live Server Method**: Right-click `index.html` → "Open with Live Server"
-
-3. **Start using ClassTrack**
-   - Click "+ Add Course" to create your first course
-   - Add assignments to each course
-   - Track your progress in real-time
-
-### No Installation Required
-ClassTrack is a static web application - no npm, no build process, no backend server. Just open and use!
-
----
-
-## 📖 User Guide
-
-### Adding a Course
-
-1. Click the **"+ Add Course"** button in the header
-2. Fill in the course details:
-   - **Course Name** - Full course name (e.g., "Applied Programming")
-   - **Course Code** - Department code (e.g., "CSE 310", "GESCI 110")
-   - **Color Theme** - Choose a color to identify this course
-   - **Credits** - Number of credit hours
-   - **Semester** - Academic term (e.g., "Fall 2025")
-3. Click **"Save Course"**
-
-### Adding an Assignment
-
-1. Click the **"+ Add Assignment"** button
-2. Fill in the assignment details:
-   - **Course** - Select the course (required)
-   - **Title** - Assignment name
-   - **Description** - Additional details (optional)
-   - **Due Date** - When it's due (required)
-   - **Priority** - High, Medium, or Low
-   - **Points** - How many points it's worth
-3. Click **"Save Assignment"**
-
-### Managing Assignments
-
-- **Mark Complete** - Click the checkbox next to an assignment
-- **Edit** - Click the "Edit" button to modify
-- **Delete** - Click the "Delete" button to remove
-- **Filter** - Use the dropdowns to filter by course or status
-- **Search** - Type in the search box to find assignments
-- **Sort** - Choose how to sort (due date, priority, points)
-
-### Viewing Progress
-
-The **right sidebar** shows:
-- **Total** - Number of assignments
-- **Completed** - Number finished
-- **Overdue** - Past due, incomplete assignments
-- **Completion Rate** - Percentage of assignments finished
-- **Completion Chart** - Visual representation of progress
-- **Points Summary** - Earned vs. total points
-
----
-
-## 🗄️ Data Structure
-
-### Course Object
-```javascript
-{
-  id: 1730412000000,
-  name: "Applied Programming",
-  code: "CSE 310",
-  color: "#0062B8",
-  credits: 3,
-  semester: "Fall 2025",
-  archived: false,
-  createdAt: "2025-11-08T15:20:00.000Z"
-}
-```
-
-### Assignment Object
-```javascript
-{
-  id: 1730412100000,
-  courseId: 1730412000000,
-  title: "JavaScript Module",
-  description: "Build an academic task manager",
-  dueDate: "2025-11-15",
-  priority: "high",
-  points: 100,
-  completed: false,
-  completedDate: null,
-  createdAt: "2025-11-08T15:20:30.000Z"
-}
-```
-
-### Statistics Object
-```javascript
-{
-  completed: 8,
-  overdue: 2,
-  pointsEarned: 720,
-  totalPoints: 1000,
-  completionRate: 80.0
-}
-```
-
----
-
-## 💾 LocalStorage Details
-
-### Storage Keys
-- **`classtrack_courses`** - Stores all courses as JSON array
-- **`classtrack_assignments`** - Stores all assignments as JSON array
-
-### Storage Limits
-- Typically **5-10MB** per domain in most browsers
-- More than enough for thousands of assignments
-- Automatic error handling if quota exceeded
-
-### Data Persistence
-- Data persists even after closing the browser
-- Data persists across devices (different browsers/computers require separate data)
-- Clear browser cache to reset all data
-
----
-
-## 🐛 Known Limitations
-
-1. **Single Browser Storage** - Data is browser and device-specific
-2. **Manual Backup** - No automatic cloud backup
-3. **No Sharing** - Can't share assignments with classmates
-4. **Offline Only** - Works only when offline, no sync across devices
-5. **Data Loss** - Clearing browser cache deletes all data
 
 ---
 
@@ -330,5 +209,3 @@ If you find ClassTrack helpful, please consider:
 **Last Updated**: November 8, 2025  
 **Version**: 1.0.0  
 **Status**: Active Development
-
-Made with ❤️ for students by Néfi Muniz

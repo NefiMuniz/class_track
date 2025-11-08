@@ -8,6 +8,19 @@ Whether you're juggling multiple courses, tracking assignment deadlines, or moni
 
 ---
 
+## 🎥 Demo & Video
+
+Test the application:
+[**Access the Class Track**](https://nefimuniz.github.io/class_track/)
+
+Watch a complete walkthrough of ClassTrack features:
+[**Click here to watch the ClassTrack demo video**](https://youtu.be/nUdjawmrhfk)
+
+*Duration: ~5 minutes*  
+*Topics: Course creation, assignment tracking, filtering, sorting, statistics*
+
+---
+
 ## 🎯 Key Features
 
 ### Course Management
@@ -242,19 +255,6 @@ The **right sidebar** shows:
 - Data persists even after closing the browser
 - Data persists across devices (different browsers/computers require separate data)
 - Clear browser cache to reset all data
-
----
-
-## 🎥 Demo & Video
-
-Test the application:
-[**Access the Class Track**](https://nefimuniz.github.io/class_track/)
-
-Watch a complete walkthrough of ClassTrack features:
-[**Click here to watch the ClassTrack demo video →**](https://youtu.be/nUdjawmrhfk)
-
-*Duration: ~5 minutes*  
-*Topics: Course creation, assignment tracking, filtering, sorting, statistics*
 
 ---
 
